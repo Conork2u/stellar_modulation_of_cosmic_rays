@@ -16,6 +16,16 @@ Copy code
 pip install matplotlib numpy scipy astropy
 Usage
 
+To run fullcode.py from the command line units must be:
+Fullcode.py SpV  Teff  MLR(Solar masses/ year) R_star(Sol rads) Luminosity(logL) Vv(km/s) B_field(Gauss) V-star(km/s) plotting?
+Sol Test Values:
+Fullcode.py Sol  5780        6.8e-14                1                0             400          1          50         false
+
+to test for sol values copy and paste:
+Fullcode.py Sol 5780 6.8e-14 1 0 400 1 22 false
+
+
+
 To run the program:
 Set your desired star by editing the Stellar_Values variable in stellar_parameters.py.
 current options srae sol , proxima_centauri and TRAPPIST-1.
