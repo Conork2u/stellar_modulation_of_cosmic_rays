@@ -1,44 +1,63 @@
-# stellar_modulation_of_cosmic_rays
-Description
-This project calculates stellar parameters and habitable zones for different main-sequence stars. It uses various scientific constants and mathematical models, including Kopparapu et al.'s work on habitable zones.
+# Stellar Modulation of Cosmic Rays
 
-Dependencies
-Python 3.x
-Matplotlib
-NumPy
-SciPy
-Astropy
-Installation
-To install all required packages, you can use pip:
+Scientific Python code for modelling how stellar-wind environments modulate cosmic-ray spectra around F, G, K, and M stars, with a focus on exoplanets in habitable zones.
 
-bash
-Copy code
-pip install matplotlib numpy scipy astropy
-Usage
+This repository is being consolidated as the canonical public home for the Stellar Bubbles / stellar modulation research code. It contains the original public model files plus a cleaned, import-safe package layer, tests, CI, citation metadata, and reproducibility notes.
 
-To run fullcode.py from the command line units must be:
-Fullcode.py SpV  Teff  MLR(Solar masses/ year) R_star(Sol rads) Luminosity(logL) Vv(km/s) B_field(Gauss) V-star(km/s) plotting?
-Sol Test Values:
-Fullcode.py Sol  5780        6.8e-14                1                0             400          1          50         false
+## Research Context
 
-to test for sol values copy and paste:
-Fullcode.py Sol 5780 6.8e-14 1 0 400 1 22 false
+This code supports the research project:
 
+- Conor Kennedy, *Investigating Cosmic-Ray Induced Radiation in Exoplanetary Environments*, thesis supervised by Dr. Robert Brose, Dublin City University, 2024.
+- Conor Kennedy and Robert Brose, "Investigating Cosmic-Ray Induced Radiation in Exoplanetary Environments", *Proceedings of the International Astronomical Union*, Symposium 387, 2026. DOI: [10.1017/S1743921324003296](https://doi.org/10.1017/S1743921324003296).
 
+The public IAU article is available through Cambridge Core: [Investigating Cosmic-Ray Induced Radiation in Exoplanetary Environments](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/C6A093A430EEA36A668661F8E1F747D3/S1743921324003296a.pdf/investigating_cosmicray_induced_radiation_in_exoplanetary_environments.pdf).
 
-To run the program:
-Set your desired star by editing the Stellar_Values variable in stellar_parameters.py.
-current options srae sol , proxima_centauri and TRAPPIST-1.
-New stellar values need to be pulled from the literature for the model to work. Eventually, we will have every stellar type from F0 to M8. 
-Once Stellar parameters are set, run the plotting file to produce a graph showing the modulation of cosmic rays. 
+## Highlights
 
-Files
-stellar_parameters.py: Script to calculate stellar parameters such as mass loss rate, terminal velocity, and mechanical luminosity for a given star.
-habitable_zone_calculation.py: Script that calculates the habitable zone based on the Kopparapu et al. model.
-functions_definitions.py: Script that calculates the values for the stellar wind, magnetic field and cosmic ray density per radius and energy
+- Models stellar-wind modulation for representative F, G, K, M, Solar, and selected nearby systems.
+- Computes habitable-zone boundaries using the Kopparapu et al. prescriptions.
+- Preserves the legacy research scripts while adding tested reusable modules.
+- Documents the third-party cosmic-ray spectra dependency instead of redistributing unclear-license files.
 
-Credits
-The habitable zone calculations are based on:
-"Habitable Zones Around Main-Sequence Stars: New Estimates" by Kopparapu et al.(2013), Astrophysical Journal, 765, 131
-"Habitable Zones Around Main-Sequence Stars: Dependence on Planetary Mass" by Kopparapu et al.(2014), Astrophysical Journal Letters, 787, L29
- Habitable zone calculator Translated to Python by John Armstrong.
+## Repository Contents
+
+- `Fullcode.py`: original public model entry point.
+- `function_definitions.py`, `hz_calculations.py`, `plotting.py`, `stellar_parameters.py`: original supporting research scripts.
+- `stellar_bubbles/`: cleaned, import-safe Python package layer for reusable pieces.
+- `tests/`: pytest coverage for habitable-zone calculations, simulation-output parsing, and repository contract checks.
+- `docs/reproducibility.md`: how to run tests and reproduce the full workflow when external spectra files are available.
+- `docs/third_party_data.md`: notes on the external `CRspectra.py` / `CRdata` dependency.
+- `docs/consolidation_plan.md`: plan for folding older duplicate repositories into this canonical repo.
+
+## Installation
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+pip install -e ".[dev]"
+```
+
+On macOS/Linux, use `source .venv/bin/activate` instead of the Windows activation command.
+
+## Tests
+
+```bash
+pytest
+```
+
+The test suite covers the clean reusable package code in `stellar_bubbles/`, validates simulation output parsing, and checks that third-party CR spectra files are not accidentally committed.
+
+## Full Workflow
+
+The full model workflow depends on external CR spectra files that are not redistributed here. If you have permission to use those files, place them locally as described in [docs/third_party_data.md](docs/third_party_data.md), then follow [docs/reproducibility.md](docs/reproducibility.md).
+
+## Project Status
+
+This is research code being cleaned into a reproducible public project. The current priority is preserving the working scientific workflow while making the repository clearer for reviewers, collaborators, and employers.
+
+## References
+
+- Kopparapu et al. (2013), "Habitable Zones Around Main-Sequence Stars: New Estimates", *The Astrophysical Journal*, 765, 131.
+- Kopparapu et al. (2014), "Habitable Zones Around Main-Sequence Stars: Dependence on Planetary Mass", *The Astrophysical Journal Letters*, 787, L29.
+- Kennedy and Brose (2026), "Investigating Cosmic-Ray Induced Radiation in Exoplanetary Environments", *Proceedings of the International Astronomical Union*, Symposium 387.

@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the associated IAU proceedings article."
+title: "Stellar Modulation of Cosmic Rays"
+authors:
+  - family-names: "Kennedy"
+    given-names: "Conor"
+  - family-names: "Brose"
+    given-names: "Robert"
+doi: "10.1017/S1743921324003296"
+date-released: 2026-01-08
+url: "https://github.com/Conork2u/stellar_modulation_of_cosmic_rays"
+preferred-citation:
+  type: article
+  title: "Investigating Cosmic-Ray Induced Radiation in Exoplanetary Environments"
+  authors:
+    - family-names: "Kennedy"
+      given-names: "Conor"
+    - family-names: "Brose"
+      given-names: "Robert"
+  doi: "10.1017/S1743921324003296"
+  year: 2026
+  journal: "Proceedings of the International Astronomical Union"

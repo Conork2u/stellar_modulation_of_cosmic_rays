@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stellar-bubbles"
+version = "0.1.0"
+description = "Scientific Python tools for modelling stellar-wind modulation of cosmic rays in exoplanetary environments."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Conor Kennedy" }
+]
+dependencies = [
+  "astropy",
+  "matplotlib",
+  "numpy",
+  "pandas",
+  "scipy",
+  "seaborn"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest"
+]
+
+[tool.setuptools.packages.find]
+include = ["stellar_bubbles*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
