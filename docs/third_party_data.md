@@ -1,30 +1,60 @@
 # Third-Party CR Spectra Inputs
 
-`Fullcode.py` and the newer local model workflow import `CRspectra.py` and expect that module to read local files from `CRdata/`.
+The full cosmic-ray modulation workflow imports `CRspectra.py`:
 
-Those files are not included in this public repository because the current local copies appear to come from a separate `crs-and-exoplanets` codebase and do not include an explicit license in the working folder.
+```python
+import CRspectra as cr
+```
 
-## Expected Local Files
+The local working copy also uses files under `CRdata/`.
 
-If you have permission to use the external CR spectra code/data, place the files in the repository root during local runs:
+These files are not included in this public repository because they are not my code/data to redistribute. They appear to come from a separate CR spectra project, and the local copy does not include a license that would make public redistribution safe.
+
+## Required Location
+
+If you have permission to use the external CR spectra code and data, place them here:
+
+```text
+scripts/
+  CRspectra.py
+  CRdata/
+    CR-modulation_LIS
+    CR-modulation_Earth
+```
+
+Then run the model from `scripts/`.
+
+## Optional External Summary Table
+
+The script `Modulation_data_ploting.py` expects:
+
+```text
+scripts/crs-and-exoplanets-main/modulation_results.csv
+```
+
+That table is also treated as an external/local dependency and is not redistributed here.
+
+## Git Ignore Policy
+
+The repository ignores:
 
 ```text
 CRspectra.py
 CRdata/
-  CR-modulation_LIS
-  CR-modulation_Earth
+crs-and-exoplanets-main/
+scripts/CRspectra.py
+scripts/CRdata/
+scripts/crs-and-exoplanets-main/
+data/external/
 ```
 
-Some plotting workflows also expect:
+This prevents accidental publication of third-party material while still documenting exactly where authorised users should place the files for full reproduction.
 
-```text
-external/modulation_results.csv
-```
+## Before Vendoring
 
-`external/`, `CRspectra.py`, `CRdata/`, and `crs-and-exoplanets-main/` are ignored by Git so they are not accidentally redistributed.
+Before adding `CRspectra.py`, `CRdata/`, or `crs-and-exoplanets-main/` to this repository, confirm:
 
-## Attribution Note
-
-The local `CRspectra.py` copy references external cosmic-ray spectra, including the Eta Carinae non-thermal process constraints from White et al. (2020), DOI `10.1051/0004-6361/201937031`.
-
-Before publishing or vendoring this dependency, confirm the original source, authorship, and license.
+- original author/source
+- license
+- redistribution permission
+- citation requirements

@@ -1,9 +1,21 @@
 __pycache__/
 *.py[cod]
 .venv/
+
+# Generated model outputs
 Data/
-external/
+scripts/Data/
+
+# Local-only third-party CR spectra inputs
 CRspectra.py
 CRdata/
 crs-and-exoplanets-main/
+scripts/CRspectra.py
+scripts/CRdata/
+scripts/crs-and-exoplanets-main/
+external/
+data/external/*
+!data/external/README.md
+
+# Local archives and generated bundles
 *.zip
