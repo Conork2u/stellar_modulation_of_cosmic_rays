@@ -1,8 +1,8 @@
 # Stellar Modulation of Cosmic Rays
 
-Scientific Python code for modelling how stellar-wind environments modulate cosmic-ray spectra around F, G, K, and M stars, with a focus on exoplanets in habitable zones.
+Scientific Python research code for modelling how stellar-wind environments modulate cosmic-ray spectra around F, G, K, and M stars, with a focus on exoplanets in habitable zones.
 
-This repository is being consolidated as the canonical public home for the Stellar Bubbles / stellar modulation research code. It contains the original public model files plus a cleaned, import-safe package layer, tests, CI, citation metadata, and reproducibility notes.
+The repository provides the public, citable home for the Stellar Bubbles / stellar modulation project associated with thesis and IAU proceedings work on cosmic-ray induced radiation in exoplanetary environments.
 
 ## Research Context
 
@@ -17,18 +17,17 @@ The public IAU article is available through Cambridge Core: [Investigating Cosmi
 
 - Models stellar-wind modulation for representative F, G, K, M, Solar, and selected nearby systems.
 - Computes habitable-zone boundaries using the Kopparapu et al. prescriptions.
-- Preserves the legacy research scripts while adding tested reusable modules.
-- Documents the third-party cosmic-ray spectra dependency instead of redistributing unclear-license files.
+- Uses a tested Python package layer for reusable calculations and output parsing.
+- Documents external cosmic-ray spectra inputs without redistributing unclear-license files.
+- Includes CI and tests for the public, import-safe code.
 
 ## Repository Contents
 
-- `Fullcode.py`: original public model entry point.
-- `function_definitions.py`, `hz_calculations.py`, `plotting.py`, `stellar_parameters.py`: original supporting research scripts.
-- `stellar_bubbles/`: cleaned, import-safe Python package layer for reusable pieces.
-- `tests/`: pytest coverage for habitable-zone calculations, simulation-output parsing, and repository contract checks.
-- `docs/reproducibility.md`: how to run tests and reproduce the full workflow when external spectra files are available.
+- `stellar_bubbles/`: reusable Python package code.
+- `tests/`: pytest coverage for habitable-zone calculations, simulation-output parsing, and repository checks.
+- `docs/reproducibility.md`: setup and reproduction notes.
 - `docs/third_party_data.md`: notes on the external `CRspectra.py` / `CRdata` dependency.
-- `docs/consolidation_plan.md`: plan for folding older duplicate repositories into this canonical repo.
+- `CITATION.cff`: citation metadata for the associated IAU proceedings paper.
 
 ## Installation
 
@@ -46,15 +45,11 @@ On macOS/Linux, use `source .venv/bin/activate` instead of the Windows activatio
 pytest
 ```
 
-The test suite covers the clean reusable package code in `stellar_bubbles/`, validates simulation output parsing, and checks that third-party CR spectra files are not accidentally committed.
+The test suite covers reusable calculations and repository checks. Full model runs require the external CR spectra files described in [docs/third_party_data.md](docs/third_party_data.md).
 
 ## Full Workflow
 
 The full model workflow depends on external CR spectra files that are not redistributed here. If you have permission to use those files, place them locally as described in [docs/third_party_data.md](docs/third_party_data.md), then follow [docs/reproducibility.md](docs/reproducibility.md).
-
-## Project Status
-
-Complete
 
 ## References
 
