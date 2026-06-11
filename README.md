@@ -54,7 +54,7 @@ The full model workflow depends on external CR spectra files that are not redist
 
 ## Project Status
 
-This is research code being cleaned into a reproducible public project. The current priority is preserving the working scientific workflow while making the repository clearer for reviewers, collaborators, and employers.
+Complete
 
 ## References
 
