@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.venv/
+Data/
+external/
+CRspectra.py
+CRdata/
+crs-and-exoplanets-main/
+*.zip
