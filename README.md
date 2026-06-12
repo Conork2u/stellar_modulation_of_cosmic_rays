@@ -162,22 +162,6 @@ python Simulation_results_reader.py
 
 For a more detailed workflow, see [docs/reproducibility.md](docs/reproducibility.md). For a script-by-script map, see [docs/scripts.md](docs/scripts.md).
 
-## Notes On Included And Excluded Files
-
-Included:
-
-- current working simulation scripts
-- standalone stellar-bubble characterisation scripts grouped under `stellar_bubble_characterisation/`
-- lightweight reference tables
-- documentation, citation metadata, tests, and install configuration
-
-Excluded:
-
-- `OldCode` / `Old Code` / `OldCode Folders`
-- generated simulation output grids
-- literature PDFs and personal files
-- `CRspectra.py`, `CRdata/`, and `crs-and-exoplanets-main/` until their authorship and license are confirmed
-
 ## References
 
 - Kopparapu et al. (2013), "Habitable Zones Around Main-Sequence Stars: New Estimates", *The Astrophysical Journal*, 765, 131.
