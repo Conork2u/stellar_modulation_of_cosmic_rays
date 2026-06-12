@@ -87,7 +87,7 @@ This reads each generated model file, parses the parameter values from the filen
 
 ## 6. Modulation-Ratio Summary Plots
 
-`Modulation_data_ploting.py` requires the external table:
+`modulation_data_plotting.py` requires the external table:
 
 ```text
 scripts/crs-and-exoplanets-main/modulation_results.csv
@@ -96,7 +96,7 @@ scripts/crs-and-exoplanets-main/modulation_results.csv
 Run it only when that local third-party workflow is available:
 
 ```bash
-python Modulation_data_ploting.py
+python modulation_data_plotting.py
 ```
 
 ## Output Policy
