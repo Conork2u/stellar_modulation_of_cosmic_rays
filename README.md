@@ -2,7 +2,7 @@
 
 Scientific Python code for modelling how stellar winds modulate cosmic-ray spectra around main-sequence stars and nearby exoplanet systems. The project estimates stellar wind, magnetic field, diffusion, and habitable-zone conditions, then uses those profiles to calculate how the incident cosmic-ray spectrum changes across the circumstellar environment.
 
-This repository is the public project home for the Stellar Bubbles / stellar modulation work associated with Conor Kennedy's thesis and the IAU proceedings article on cosmic-ray induced radiation in exoplanetary environments.
+This repository is the public project home for the Stellar Bubbles / stellar modulation work associated with My thesis and the IAU proceedings article on cosmic-ray induced radiation in exoplanetary environments.
 
 ## Research Context
 
