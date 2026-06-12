@@ -31,7 +31,7 @@ scripts/
   Bubble_model.py                # Main stellar-wind and cosmic-ray modulation model
   Simulation_code.py             # Batch runner for stellar classes and specific systems
   Simulation_results_reader.py   # Reads generated Data/ files and plots modulation ranges
-  Modulation_data_ploting.py     # Plotting script for modulation-ratio summary tables
+  modulation_data_plotting.py    # Plotting script for modulation-ratio summary tables
 
 stellar_bubble_characterisation/
   Standalone earlier scripts for calculating and plotting one stellar bubble
@@ -158,9 +158,25 @@ python Simulation_results_reader.py
 2. Add the external `CRspectra.py` and `CRdata/` files under `scripts/` if you have access to them.
 3. Run `python Simulation_code.py` from `scripts/` to regenerate the model grid.
 4. Run `python Simulation_results_reader.py` from `scripts/` to inspect the generated `Data/` files and recreate modulation plots.
-5. Use `Modulation_data_ploting.py` only when the external `crs-and-exoplanets-main/modulation_results.csv` table is available.
+5. Use `modulation_data_plotting.py` only when the external `crs-and-exoplanets-main/modulation_results.csv` table is available.
 
 For a more detailed workflow, see [docs/reproducibility.md](docs/reproducibility.md). For a script-by-script map, see [docs/scripts.md](docs/scripts.md).
+
+## Notes On Included And Excluded Files
+
+Included:
+
+- current working simulation scripts
+- standalone stellar-bubble characterisation scripts grouped under `stellar_bubble_characterisation/`
+- lightweight reference tables
+- documentation, citation metadata, tests, and install configuration
+
+Excluded:
+
+- `OldCode` / `Old Code` / `OldCode Folders`
+- generated simulation output grids
+- literature PDFs and personal files
+- `CRspectra.py`, `CRdata/`, and `crs-and-exoplanets-main/` until their authorship and license are confirmed
 
 ## References
 
