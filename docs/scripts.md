@@ -31,6 +31,10 @@ Key functions:
 
 Full runs require `CRspectra.py` and `CRdata/` beside the script.
 
+Optional mean-free-path comparison CSV files can be supplied by setting
+`STELLAR_BUBBLES_MFP_DIR` to a folder containing `Parallel MFP.csv` and
+`Radial MFP.csv`.
+
 ## `Simulation_code.py`
 
 Batch runner for the main model.
@@ -70,7 +74,7 @@ Expected generated file format:
 radius_cm energy_erg modulation_value
 ```
 
-## `Modulation_data_ploting.py`
+## `modulation_data_plotting.py`
 
 Summary plotting script for modulation-ratio tables.
 
